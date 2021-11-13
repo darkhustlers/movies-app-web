@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
-function App() {
+import Home from './pages/Home';
+import About from './pages/About';
+import Movie from './pages/Movie';
+import TV from './pages/TV';
+import Search from './pages/Search';
+import NotFound from './pages/NotFound';
+
+import * as ROUTES from './constants/routes';
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <Switch>
+        <Route exact path={ROUTES.HOME} component={Home} />
+        <Route exact path={ROUTES.ABOUT} component={About} />
+        <Route exact path={ROUTES.MOVIE} component={Movie} />
+        <Route exact path={ROUTES.TV} component={TV} />
+        <Route exact path={ROUTES.SEARCH} component={Search} />
+        <Route path="*" component={NotFound} />
+      </Switch>
+    </HashRouter>
   );
 }
-
-export default App;

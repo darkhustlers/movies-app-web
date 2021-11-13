@@ -1,0 +1,113 @@
+.color-scheme-dark {
+  color-scheme: dark;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.grid-auto-cols {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.-z-1 {
+  z-index: -1;
+}
+.card {
+  min-width: 19rem;
+  min-height: 12rem;
+}
+
+.details__card-img,
+.poster__card-img {
+  min-height: 8rem;
+  min-width: 8rem;
+  max-width: 8rem;
+}
+
+.to-right {
+  --to: to right;
+}
+
+.to-left {
+  --to: to left;
+}
+
+.bg-gradient-black {
+  background-image: -moz-linear-gradient(
+    var(--to),
+    var(--black-100),
+    var(--black-200),
+    var(--black)
+  );
+  background-image: linear-gradient(var(--to), var(--black-500), var(--black-600), var(--black));
+}
+
+::selection {
+  background-color: var(--primary-200);
+  color: var(--white);
+}
+
+::-moz-selection {
+  background-color: var(--primary-200);
+  color: var(--white);
+}
+
+@media (min-width: 1280px) {
+  .details__card-img {
+    min-height: 15rem;
+    max-height: 20rem;
+    min-width: 15rem;
+    max-width: 15rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .details__card-img {
+    min-height: 12rem;
+    max-height: 18rem;
+    min-width: 12rem;
+    max-width: 12rem;
+  }
+  .card {
+    min-width: 22rem;
+    min-height: 12rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .poster__card-img {
+    min-height: auto;
+    min-width: auto;
+    max-width: auto;
+  }
+  .sm\:\!hidden {
+    display: none !important;
+  }
+}
